@@ -23,7 +23,7 @@ type FollowerOptions struct {
 func NewLogFollower(
 	docs repository.Documents,
 	opts FollowerOptions,
-) (*LogFollower, error) {
+) *LogFollower {
 	return &LogFollower{
 		docs:     docs,
 		docType:  opts.DocType,
@@ -33,7 +33,7 @@ func NewLogFollower(
 			opts.WaitDuration.Milliseconds(),
 			math.MaxInt32,
 		)),
-	}, nil
+	}
 }
 
 type LogFollower struct {
