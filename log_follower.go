@@ -62,6 +62,12 @@ func (lf *LogFollower) GetState() (int64, bool) {
 	return lf.position, lf.caughtUp
 }
 
+// SetState sets the current log position and caught up-state, see GetState().
+func (lf *LogFollower) SetState(pos int64, caughtUp bool) {
+	lf.position = pos
+	lf.caughtUp = caughtUp
+}
+
 func (lf *LogFollower) GetNext(
 	ctx context.Context,
 ) ([]*repository.EventlogItem, error) {
