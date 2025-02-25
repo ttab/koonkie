@@ -193,11 +193,8 @@ func NewPrometheusFollowerMetrics(
 		prometheus.GaugeOpts{
 			Name: "eventlog_follower_position",
 			Help: "Current log position for eventloglog follower",
-			ConstLabels: prometheus.Labels{
-				"follower": followerName,
-			},
 		},
-		[]string{"state"},
+		[]string{"follower", "state"},
 	)
 	if err := reg.Register(logPosition); err != nil {
 		return nil, fmt.Errorf("failed to register log position metric: %w", err)
@@ -211,10 +208,19 @@ func NewPrometheusFollowerMetrics(
 var _ FollowerMetrics = &PrometheusFollowerMetrics{}
 
 type PrometheusFollowerMetrics struct {
+	name        string
 	logPosition *prometheus.GaugeVec
 }
 
 // SetPosition implements FollowerMetrics.
 func (p *PrometheusFollowerMetrics) SetPosition(state string, position int64) {
-	p.logPosition.WithLabelValues(state).Set(float64(position))
+	p.logPosition.WithLabelValues(p.name, state).Set(float64(position))
+}
+
+// WithName creates a separate instance with another follower name.
+func (p *PrometheusFollowerMetrics) WithName(followerName string) *PrometheusFollowerMetrics {
+	return &PrometheusFollowerMetrics{
+		name:        followerName,
+		logPosition: p.logPosition,
+	}
 }
