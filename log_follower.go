@@ -29,6 +29,7 @@ func NewLogFollower(
 		docType:  opts.DocType,
 		position: opts.StartAfter,
 		caughtUp: opts.CaughtUp,
+		metrics:  opts.Metrics,
 		wait: int32(min( //nolint: gosec
 			opts.WaitDuration.Milliseconds(),
 			math.MaxInt32,
