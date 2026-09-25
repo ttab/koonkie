@@ -19,7 +19,7 @@ type FollowerOptions struct {
 	WaitDuration time.Duration
 }
 
-// NewLogFollower creates a new follower
+// NewLogFollower creates a new follower.
 func NewLogFollower(
 	docs repository.Documents,
 	opts FollowerOptions,
@@ -193,6 +193,9 @@ type FollowerMetrics interface {
 	SetPosition(state string, position int64)
 }
 
+// NewPrometheusFollowerMetrics registers the follower metrics with reg and
+// returns an instance that reports under followerName. Use WithName for
+// further followers that share the registration.
 func NewPrometheusFollowerMetrics(
 	reg prometheus.Registerer, followerName string,
 ) (*PrometheusFollowerMetrics, error) {
@@ -208,6 +211,7 @@ func NewPrometheusFollowerMetrics(
 	}
 
 	return &PrometheusFollowerMetrics{
+		name:        followerName,
 		logPosition: logPosition,
 	}, nil
 }
