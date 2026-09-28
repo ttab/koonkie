@@ -4,7 +4,7 @@ go 1.27.1
 
 require (
 	github.com/prometheus/client_golang v1.24.1
-	github.com/ttab/elephant-api v0.25.2
+	github.com/ttab/elephant-api v0.26.0
 )
 
 require (

@@ -18,8 +18,8 @@ github.com/prometheus/procfs v0.22.0 h1:6q9+/JL9IKAPbCmBrv9n5O5Ty3NKnciV5X7YGw0o
 github.com/prometheus/procfs v0.22.0/go.mod h1:CvmFr/GVhIjIvWJZW3tgkODBQMRIf0EyWMQLHCHab58=
 github.com/stretchr/testify v1.12.1 h1:EuwCh5fleGS7H32xRwO3wRGT7DxrDhLAT6FF8MpWDWE=
 github.com/stretchr/testify v1.12.1/go.mod h1:MDEgiDPPsNp5cuIrHPPCyornHKgEVbtFUmoNlxoYthg=
-github.com/ttab/elephant-api v0.25.2 h1:TAtqyFikAnx5dKDwuKX8MKeAHg7nt/0hiDJ5/0Hj0ug=
-github.com/ttab/elephant-api v0.25.2/go.mod h1:YkGnpNerKrO/PVSczTtSin9NNvXUK/Ou6DIlgkvI5FA=
+github.com/ttab/elephant-api v0.26.0 h1:MN5Ia6cViUm6zFldT+DmLS/XmU+zcCwTsZUEBc+az0c=
+github.com/ttab/elephant-api v0.26.0/go.mod h1:YkGnpNerKrO/PVSczTtSin9NNvXUK/Ou6DIlgkvI5FA=
 github.com/ttab/newsdoc v1.1.0 h1:sFmWByaIrjOiLKrgQ3isqINibAn91KxmWWP2DOwguZ8=
 github.com/ttab/newsdoc v1.1.0/go.mod h1:ccjzZc4rhelSUzIlqA7Og2g5LfnSmz9IblndQtnKvh8=
 github.com/twitchtv/twirp v8.1.3+incompatible h1:+F4TdErPgSUbMZMwp13Q/KgDVuI7HJXP61mNV3/7iuU=
